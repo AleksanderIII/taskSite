@@ -8,7 +8,7 @@ module.exports = {
         filename: "bundle.js"
     },
     moduleFileExtensions: [
-        'json',
+        "js", "json", "node"
     ],
     module: {
         rules: [
