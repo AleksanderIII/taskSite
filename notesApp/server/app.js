@@ -1,7 +1,6 @@
 const express = require('express') ;
 const parser = require('body-parser');
 const dbMethods  = require('./utils/dataBaseUtils') ;
-const SERVER_PORT =  require('../etc/config.json').serverPort;
 const CORS = require('cors');
 
 dbMethods.setUpConnection();
@@ -74,10 +73,6 @@ app.delete('/notes/:id', (req, res)=>{
         .then(data=>res.send(data))
 });
 
-
-let server_port = process.env.YOUR_PORT || process.env.PORT || 8080;
-let server_host = process.env.YOUR_HOST || '0.0.0.0';
-
-app.listen(server_port||server_host||SERVER_PORT,()=>{
+app.listen(process.env.PORT || 8080,()=>{
     console.log('i am listening')
 })
