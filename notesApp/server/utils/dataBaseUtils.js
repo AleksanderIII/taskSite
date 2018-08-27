@@ -8,7 +8,7 @@ const User = mongoose.model('User');
 const dbConfig = require('../../etc/config.json').db;
 
 function setUpConnection(){
-    mongoose.connect(`${dbConfig.host}/${dbConfig.name}`, { useNewUrlParser: true });
+    mongoose.connect("mongodb://Aleksander:6818792Explorer@ds123852.mlab.com:23852/notes", { useNewUrlParser: true });
 }
 
 function ListOfUsers(){
