@@ -7,9 +7,6 @@ module.exports = {
         publicPath: "build/",
         filename: "bundle.js"
     },
-    moduleFileExtensions: [
-        "js", "json", "node"
-    ],
     module: {
         rules: [
             {
