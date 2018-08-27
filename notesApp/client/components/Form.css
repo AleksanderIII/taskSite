@@ -1,0 +1,39 @@
+form{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+}
+
+form input, form button{
+    display: block;
+    width: 100%;
+    font-size: 100%;
+    padding: 0;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    margin: 5% 0;
+    padding: 5% 0 ;
+    background-color: rgba(214, 226, 103, 0.911);
+    color: rgb(223, 143, 39);
+}
+form ::placeholder{
+    color: rgb(111, 117, 27);
+    font-style: italic;
+}
+form span{
+    float: right;
+}
+button a{
+    color: rgb(223, 143, 39);
+    text-transform: uppercase;
+}
+
+
+a{
+    color: rgb(128, 110, 9);
+    text-decoration: none;
+}

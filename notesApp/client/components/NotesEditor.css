@@ -1,0 +1,95 @@
+.MenuContainer{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-content: center;
+    align-content: center;
+    padding: 2% 0 0 0;
+}
+
+.NotesEditor{
+    padding: 5%;
+    margin: 2% 20%;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(217deg, rgba(255, 230, 0, 0.8), rgba(51, 255, 0, 0) 70%),
+                linear-gradient(127deg, rgba(139, 196, 153, 0.8), rgba(14, 100, 14, 0) 70%);
+}
+
+.NotesEditor input, textarea{
+    outline: none;
+    width: 100%;
+    font-size: 100%;
+    padding: .5% 0;
+    border: none;
+    margin-bottom: 1%;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgba(231, 233, 212, 0.801);
+}
+
+.NotesEditor label{
+    text-align: center;
+    display: block;
+    position: relative;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%, 0)
+}
+
+textarea{
+   resize: none; 
+}
+
+.NotesEditor button{
+    outline: none;
+    position: relative;
+    left: 50%;
+    top: 10%;
+    background-color: beige;
+    border-radius: 5px;
+    border: none;
+    padding: 1% 2%;
+    text-transform: uppercase;
+    color: rgb(151, 43, 16);
+    transform: translate(-50%, 0)
+}
+
+.NotesEditor select{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: rgb(156, 152, 72);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: .5%;
+    margin: 2% 0;
+    outline:none
+}
+
+.ProjectsList, .ProjectsList option{
+    background: rgb(187, 161, 45);
+}
+
+.NotesEditor select:active, select:hover, select:focus {
+    outline: none;
+    background: orange;
+}
+
+option:hover{
+    outline: none;
+    background: orange;
+}
+
+.StatusList option:nth-child(1) {
+    background: rgb(238, 233, 186);
+}
+.StatusList option:nth-child(2) {
+    background: rgb(233, 219, 99);
+}
+.StatusList option:nth-child(3) {
+    background: rgb(184, 126, 19);
+}
+.StatusList option:nth-child(4) {
+    background: rgb(141, 74, 11);
+}

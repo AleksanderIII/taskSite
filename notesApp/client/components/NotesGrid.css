@@ -1,0 +1,28 @@
+.NotesGrid{
+    position: relative;
+    width: 90%;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1%;
+    grid-row-gap: 5px;
+    justify-content: space-evenly;
+    padding: 10px;
+    background: rgba(181, 201, 141, 0.281);
+}
+
+h2{
+    margin: 3% 0 0 0;
+    text-transform: uppercase;
+    text-align: center;
+    color: chocolate
+}
+
+h3{
+    padding: 2%;
+}
+.content{
+    min-height: 50vh
+}

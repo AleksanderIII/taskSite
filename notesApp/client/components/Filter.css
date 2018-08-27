@@ -1,0 +1,26 @@
+.Filter{
+    position: relative;
+    padding-right: 10%;
+    width: fit-content;
+    left: 100%;
+    transform: translate(-100%, 0)
+}
+.Filter h4{
+    text-align: center;
+}
+.Filter div{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    padding: 4% 0;
+}
+
+.Filter select{
+    background: rgb(156, 152, 72);
+    color: white;
+    outline:none;
+    border: none;
+    padding: 1%;
+    
+    border-radius: 5px;
+}

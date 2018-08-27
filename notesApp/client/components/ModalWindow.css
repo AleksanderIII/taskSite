@@ -1,0 +1,58 @@
+.Modal{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    min-height: 50%;
+    z-index: 100;
+    padding: 2% 0;
+}
+.Modal_background{
+    background: rgba(186, 186, 189, 0.671);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+}
+
+.Modal h3{
+    text-align: center;
+    padding: 3% 0 0 0;
+}
+.Modal p, .Modal_edit_status{
+    padding: 2% 5% 0 5%;
+}
+
+.Modal_edit{
+    max-height: 40vh;
+    overflow-y: auto;
+}
+
+.Modal_edit span, .Modal_save, .Modal_edit_status span{
+    color: white;
+    transition: color 1s;
+    font-size: 150%;
+    
+}
+
+.Modal_edit span:hover, .Modal_save:hover, .Modal_edit_status span:hover{
+    color: red; 
+}
+.Modal_save{
+    display: block;
+    text-align: center;
+    font-size: 300%;
+}
+.Modal_edit_comment, .newComment{
+    margin: 0 5%;
+    font-size: 90%;
+}
+
+.newComment{
+    border: none;
+    text-align: center;
+    outline: none;
+}

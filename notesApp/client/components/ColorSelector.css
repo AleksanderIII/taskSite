@@ -1,0 +1,33 @@
+ul{
+    display: block;
+    width: 100%;
+}
+li{
+    list-style-type: none;
+    display: inline-block;
+    width: 20%;
+    margin: 4% 0;
+}
+li div{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 4vh;
+    width: 4vh;
+    border-radius: 50%;
+    cursor: pointer;
+}
+li div:hover{
+    box-sizing: border-box;
+    border: 2px solid #76db7b;
+}
+
+h3{
+    text-align: center;
+    color: rgb(18, 12, 68);
+}
+
+.color--selected{
+    box-sizing: border-box;
+    border: 3px solid rgb(37, 131, 29);;
+}

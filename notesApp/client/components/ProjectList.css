@@ -1,0 +1,50 @@
+.ProjectList{
+    background: rgba(196, 197, 142, 0.445);
+    padding: 5%;
+    margin: 5%;
+    height: max-content;
+}
+.ProjectList li, .ProjectList input,.ProjectList button{
+    display: block;
+    width: 100%;
+}
+
+
+.ProjectList li{
+    position: relative;
+    text-align: center
+}
+
+
+.ProjectList input{
+    background: rgba(196, 197, 142, 0.445);
+    text-align: center;
+    border: none;
+    font-size: 100%;
+    outline: none;
+    width: 100%;
+    padding: 2%  0;
+}
+
+.ProjectList button{
+    outline: none;
+    position: relative;
+    left: 50%;
+    top: 5px;
+    background-color: beige;
+    border-radius: 5px;
+    border: none;
+    padding: 2% 3%;
+    text-transform: uppercase;
+    color: rgb(151, 43, 16);
+    transform: translate(-50%, 0)
+}
+
+.ProjectList li span{
+    cursor: pointer;
+    float: right;
+    color: rgb(241, 157, 157);
+}
+.ProjectList li span:hover{
+    color: rgb(233, 4, 4);
+}
