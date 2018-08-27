@@ -74,6 +74,6 @@ app.delete('/notes/:id', (req, res)=>{
         .then(data=>res.send(data))
 });
 
-app.listen(SERVER_PORT,()=>{
+app.listen(process.env.PORT||SERVER_PORT,()=>{
     console.log('i am listening')
 })
