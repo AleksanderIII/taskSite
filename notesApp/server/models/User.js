@@ -16,6 +16,9 @@ const UserSchema = new Schema({
     },
     email:{
         type: String
+    },
+    confirmed:{
+        type: Boolean
     }
 });
 const User = mongoose.model('User', UserSchema)

@@ -2,6 +2,7 @@ const express = require('express') ;
 const parser = require('body-parser');
 const dbMethods  = require('./utils/dataBaseUtils') ;
 const CORS = require('cors');
+const nodemailerObj = require('./nodeMailer.js');
 
 dbMethods.setUpConnection();
 
@@ -20,6 +21,7 @@ app.post('/users', (req, res)=>{
 });
 
 app.post('/register', (req, res)=>{
+    nodemailerObj.postMail(req.body.email)
     dbMethods.register(req.body)
         .then(data=>dbMethods.ListOfUsers())
         .then(data=>res.send(data))

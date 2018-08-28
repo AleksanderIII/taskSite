@@ -18,7 +18,8 @@ function register(data) {
     const user = User({
         name: data.name,
         lastName: data.lastName,
-        email: data.email
+        email: data.email,
+        confirmed: false
     });
     return user.save();
 }
