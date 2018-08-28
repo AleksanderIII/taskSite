@@ -8,6 +8,7 @@
     "webpack-devserver": "webpack-dev-server --mode development --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 8090 --host 0.0.0.0",
     "build-client": "webpack --mode production",
     "start-dev": "concurrently --kill-others --success all  \"npm run server\" \"npm run webpack-devserver\"",
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "prod": "NODE_ENV=production node server/app.js",
     "postinstall": "webpack -p"
   },
