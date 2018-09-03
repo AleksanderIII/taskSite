@@ -15,13 +15,18 @@ function ListOfUsers(){
     return User.find();
 }
 
+function FindUser(email){
+    return User.findOne({email});
+}
+
 function register(data) { 
     const user = User({
-        name: data.name,
-        lastName: data.lastName,
-        email: data.email,
+        name: data.body.name,
+        lastName: data.body.lastName,
+        email: data.body.email,
+        password: data.body.password,
         confirmed: false
-    });
+    }); 
     return user.save();
 }
 
@@ -99,5 +104,6 @@ module.exports = {
     createUser,
     updateNote,
     deleteUser,
-    register
+    register,
+    FindUser
 }

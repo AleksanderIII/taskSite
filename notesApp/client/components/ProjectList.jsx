@@ -12,6 +12,8 @@ class ProjectList extends React.Component{
         this.props.onGetProjectsList();
     }
     render(){
+        const user = JSON.parse(sessionStorage.getItem('user'));
+        const userRole = user.role ;
         return(
             <div className = "ProjectList">
                 <h2>Actual projects</h2>
@@ -22,21 +24,29 @@ class ProjectList extends React.Component{
                                this.props.projectList.map((element, index) => 
                                 <li key = {index}>
                                     {element.title}
-                                    <span onClick = {e => this.props.onDeleteProject(element._id)}>&#10007;</span>
+                                    {
+                                        userRole === 'developer' ? <p></p> : 
+                                        <span onClick = {e => this.props.onDeleteProject(element._id)}>&#10007;</span>
+                                    }
                                 </li>
                                ) 
                             }
                         </ul>
                 }
-                
-                <input 
-                    value = {this.props.project.title}  
-                    onChange = {e=>this.props.onChangeProjectTitle(e.target.value)} 
-                    type="text" 
-                    maxLength="15"
-                    placeholder = "New project" 
-                />
-                <button onClick = {e=>this.props.onCreateProject(this.props.project)}>Add project name</button>
+                {
+                    userRole === 'developer' ? <p></p> : 
+                    <input 
+                        value = {this.props.project.title}  
+                        onChange = {e=>this.props.onChangeProjectTitle(e.target.value)} 
+                        type="text" 
+                        maxLength="15"
+                        placeholder = "New project" 
+                    />
+                }
+                {
+                    userRole === 'developer' ? <p></p> : 
+                    <button onClick = {e=>this.props.onCreateProject(this.props.project)}>Add project name</button>
+                }
             </div>
         ) 
     }

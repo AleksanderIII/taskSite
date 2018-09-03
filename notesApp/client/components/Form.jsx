@@ -64,7 +64,7 @@ class Form extends React.Component{
                     <button disabled = {!this.valid} onClick = {e => this.register(e)} >
                         {this.valid?<b>register</b>:<b>please, fill in the form</b>}
                     </button> 
-                    <span><Link to="/login">Log in</Link></span>               
+                    <span><Link to="/signin">Sign in</Link></span>               
                 </form>
             </Fragment>
             

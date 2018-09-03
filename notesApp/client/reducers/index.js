@@ -8,6 +8,7 @@ import usersList from './usersList.js';
 import filter from './filter.js';
 import user from './user.js';
 import registerform from './registerform.js';
+import signinform from './signinform.js';
 
 export default combineReducers({
     note,
@@ -18,5 +19,6 @@ export default combineReducers({
     usersList,
     filter,
     registerform,
-    user
+    user,
+    signinform
 })

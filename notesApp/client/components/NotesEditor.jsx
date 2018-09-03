@@ -16,11 +16,15 @@ class NoteEditor extends React.Component{
     addNote(){
         this.props.onCreateNote(this.props.note)
     }
-
+     
     render(){
+        const user = JSON.parse(sessionStorage.getItem('user'));
+        const userNameAndLName = JSON.parse(sessionStorage.getItem('user')).name +' '
+            + JSON.parse(sessionStorage.getItem('user')).lastName;
+        const userRole = user.role ;
         return(
             <div className = "MenuContainer">
-                <ProjectList />
+                <ProjectList /> 
                 <div className = "NotesEditor">
                     <input 
                         value = {this.props.note.title}
@@ -48,6 +52,10 @@ class NoteEditor extends React.Component{
                     </label>
                     <select onClick = {e => this.props.onChangeNoteDeveloper(e.target.value)}>
                         {  
+                            userRole === 'developer'?
+                            <option value={userNameAndLName}>
+                                            {userNameAndLName}
+                            </option>:
                             this.props.usersList.length>0?
                                 this.props.usersList.map((elem, index)=>{
                                     return <option key={index} value={elem.name +' '+ elem.lastName}>
@@ -80,7 +88,7 @@ class NoteEditor extends React.Component{
                         Create task
                     </button>
                 </div>  
-                <UsersList />
+                <UsersList /> 
             </div>
         )   
     }

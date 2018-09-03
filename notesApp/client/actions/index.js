@@ -6,7 +6,8 @@ import { COLOR_SELECT, TITLE_CHANGE, TEXT_CHANGE, DEVELOPER_CHANGE, POST_NOTE,
          CHANGE_STATUS, POST_NOTE_CHANGES, EDIT_ONE_COMMENT, COMMENT_EDITIONING, COMMENT_EDITED,
          CHANGE_USER_NAME, CHANGE_USER_LAST_NAME, CHANGE_USER_ROLE, ADD_USER, DELETE_USER,
          CHANGE_REGISTER_NAME, CHANGE_REGISTER_LAST_NAME, CHANGE_REGISTER_PASSWORD,
-         CHANGE_REGISTER_EMAIL, REGISTER } from '../constants/index.js';
+         CHANGE_REGISTER_EMAIL, REGISTER, CHANGE_SIGNIN_EMAIL, CHANGE_SIGNIN_PASSWORD,
+         SIGNIN } from '../constants/index.js';
 
 
 export const changeRegiterName = (name) => ( {
@@ -43,6 +44,31 @@ export  const  Register =  (user) => dispatch =>{
         .then(data => {dispatch({type: REGISTER}); return data} )
         .then(data => {dispatch({type: ADD_USER}); return data} )
         .then(data =>  dispatch({type: GET_USERS_LIST, payload: data}) )
+};
+
+
+export const changeSignInPassword = (password) => ({
+    type: CHANGE_SIGNIN_PASSWORD,
+    payload: password
+})
+
+export const changeSignInEmail = (email) => ({
+    type: CHANGE_SIGNIN_EMAIL,
+    payload: email
+})
+
+export  const  signIn =  (user) => dispatch =>{
+    const fetchOptions = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    };
+    fetch(`http://localhost:8080/signin`,  fetchOptions)
+        .then(response => response.json() )
+        .then(data =>  {sessionStorage.setItem('user', JSON.stringify(data) ); dispatch({type: SIGNIN})} )
 };
 
 export const changeNoteColor = (note) => ( {

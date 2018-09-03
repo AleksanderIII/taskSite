@@ -12,6 +12,8 @@ class UsersList extends React.Component{
         this.props.onGetUserList();
     }
     render(){
+        const user = JSON.parse(sessionStorage.getItem('user'));
+        const userRole = user.role ;
         return(
             <div className = "UsersList">
                 <h2>Developers</h2>
@@ -30,37 +32,50 @@ class UsersList extends React.Component{
                                             <td>{element.name}</td>
                                             <td>{element.lastName}</td>
                                             <td>{element.role}</td>
-                                            <td> <span onClick = {e => this.props.onDeleteUser(element._id)}>&#10007;</span></td>
+                                            {
+                                                userRole === 'developer' ? <p></p> : 
+                                                <td> <span onClick = {e => this.props.onDeleteUser(element._id)}>&#10007;</span></td>
+                                            }
                                         </tr>
                                     ) 
                                 }
                             </tbody>
-                            
                         </table>
                         : <p>We don't have developers</p>
                 }
-                <input 
-                    type="text"
-                    value = {this.props.user.name}
-                    onChange = {e => this.props.onChangeUserName(e.target.value)}
-                    placeholder = "new user name"
-                    maxLength = "10"
-                />
-                <input 
-                    type="text"
-                    value = {this.props.user.lastName}
-                    onChange = {e => this.props.onChangeUserLastName(e.target.value)}
-                    placeholder = "new user last name"
-                    maxLength = "10"
-                />
-                <p>
+                {
+                    userRole === 'developer' ? <p></p> : 
+                    <input 
+                        type="text"
+                        value = {this.props.user.name}
+                        onChange = {e => this.props.onChangeUserName(e.target.value)}
+                        placeholder = "new user name"
+                        maxLength = "10"
+                    />
+                }
+                {
+                    userRole === 'developer' ? <p></p> : 
+                    <input 
+                        type="text"
+                        value = {this.props.user.lastName}
+                        onChange = {e => this.props.onChangeUserLastName(e.target.value)}
+                        placeholder = "new user last name"
+                        maxLength = "10"
+                    />
+                }
+                {
+                    userRole === 'developer' ? <p></p> : 
+                    <p>
                     Role: <select onChange = {e => this.props.onChangeRole(e.target.value)}>
                         <option value="developer">developer</option>
                         <option value="manager">manager</option>
-                </select>
-                </p>
-                
-                <button onClick = {e => this.props.onAddUser(this.props.user)}>Add developer</button>
+                    </select>
+                    </p>
+                }
+                {
+                    userRole === 'developer' ? <p></p> : 
+                    <button onClick = {e => this.props.onAddUser(this.props.user)}>Add developer</button>
+                }
             </div>
         ) 
     }
